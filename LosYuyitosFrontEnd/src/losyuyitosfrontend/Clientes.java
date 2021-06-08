@@ -46,10 +46,12 @@ public class Clientes extends javax.swing.JFrame {
         chkSi = new javax.swing.JCheckBox();
         chkNo = new javax.swing.JCheckBox();
         btnCrear = new javax.swing.JButton();
-        btnActualizar = new javax.swing.JButton();
+        btnVolver = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(167, 172, 172));
 
+        jLabel1.setFont(new java.awt.Font("Rockwell", 0, 20)); // NOI18N
         jLabel1.setText("Clientes");
 
         jLabel2.setText("Rut Cliente:");
@@ -86,7 +88,12 @@ public class Clientes extends javax.swing.JFrame {
 
         btnCrear.setText("Crear");
 
-        btnActualizar.setText("Actualizar");
+        btnVolver.setText("Volver");
+        btnVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVolverActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -109,7 +116,7 @@ public class Clientes extends javax.swing.JFrame {
                     .addComponent(jLabel8))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(cmbProvincia, 0, 197, Short.MAX_VALUE)
+                    .addComponent(cmbProvincia, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(cmbRegion, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(txtDireccion)
                     .addComponent(txtTelefono)
@@ -120,18 +127,19 @@ public class Clientes extends javax.swing.JFrame {
                         .addComponent(chkSi)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnCrear)
-                            .addComponent(chkNo))))
-                .addContainerGap(87, Short.MAX_VALUE))
+                            .addComponent(chkNo)
+                            .addComponent(btnCrear))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(179, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addGap(186, 186, 186))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btnActualizar)
-                        .addGap(37, 37, 37))))
+                        .addComponent(btnVolver)
+                        .addGap(52, 52, 52))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -173,9 +181,9 @@ public class Clientes extends javax.swing.JFrame {
                     .addComponent(chkNo))
                 .addGap(32, 32, 32)
                 .addComponent(btnCrear)
-                .addGap(9, 9, 9)
-                .addComponent(btnActualizar)
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnVolver)
+                .addContainerGap(34, Short.MAX_VALUE))
         );
 
         pack();
@@ -184,6 +192,13 @@ public class Clientes extends javax.swing.JFrame {
     private void txtRutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRutActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtRutActionPerformed
+
+    private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
+        // TODO add your handling code here:
+        Menu mn = new Menu();
+        mn.setVisible(true);
+        super.dispose();
+    }//GEN-LAST:event_btnVolverActionPerformed
 
     /**
      * @param args the command line arguments
@@ -221,8 +236,8 @@ public class Clientes extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnActualizar;
     private javax.swing.JButton btnCrear;
+    private javax.swing.JButton btnVolver;
     private javax.swing.JCheckBox chkNo;
     private javax.swing.JCheckBox chkSi;
     private javax.swing.JComboBox cmbComuna;
